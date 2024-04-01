@@ -1,5 +1,7 @@
 # Redux-Toolkit Query Patterns
 
+![Demo](./public/demo.png)
+
 A repository for playing around with different usage patterns in Redux-Toolkit Query to discover best approaches for managing state.
 
 It is built around common api's such as [PokeApi](https://pokeapi.co/).
@@ -9,7 +11,7 @@ It is built around common api's such as [PokeApi](https://pokeapi.co/).
 1. `useQuery`
 2. `useLazyQuery` + Trigger in `useEffect`
 3. `useQueryState` + Initiate in `useEffect`
-4. `useSelector` + Initiate in `useEffect`
+4. `useSelector` + Initiate in `useEffect` (Coming soon...)
 5. `useQuery` + `skip`/`skipToken` (Coming soon...)
 6. `transformResponse` (Coming soon...)
 7. Pagination (Coming soon...)
