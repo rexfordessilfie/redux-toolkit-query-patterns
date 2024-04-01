@@ -1,6 +1,23 @@
-# React + TypeScript + Vite
+# Redux-Toolkit Query Patterns
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A repository for playing around with different usage patterns in Redux-Toolkit Query to discover best approaches for managing state.
+
+It is built around common api's such as [PokeApi](https://pokeapi.co/).
+
+# Patterns
+
+1. `useQuery`
+2. `useLazyQuery` + Trigger in `useEffect`
+3. `useQueryState` + Initiate in `useEffect`
+4. `useSelector` + Initiate in `useEffect`
+5. `useQuery` + `skip`/`skipToken` (Coming soon...)
+6. `transformResponse` (Coming soon...)
+7. Pagination (Coming soon...)
+8. Infinite Scroll (Coming soon...)
+
+# Development
+
+This project was bootstrapped with Vite and provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
@@ -17,12 +34,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
