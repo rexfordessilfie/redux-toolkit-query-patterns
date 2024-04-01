@@ -1,18 +1,18 @@
-import { useGetPokemonByNameQuery } from "../api/pokemon";
+import { useEffect } from "react";
+import { pokemonApi } from "../api/pokemon";
 
 type PokeProps = {
   name: string;
 };
-export function PokemonInfo({ name }: PokeProps) {
-  const {
-    data,
-    error,
-    isLoading,
-    isFetching,
-    isUninitialized,
-    isSuccess,
-    isError,
-  } = useGetPokemonByNameQuery(name);
+export function PokeInfoLazy({ name }: PokeProps) {
+  const [
+    getPokemon,
+    { data, error, isLoading, isFetching, isUninitialized, isSuccess, isError },
+  ] = pokemonApi.endpoints.getPokemonByName.useLazyQuery();
+
+  useEffect(() => {
+    getPokemon(name);
+  }, [getPokemon, name]);
 
   return (
     <div>

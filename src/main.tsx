@@ -6,11 +6,21 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import LazyQuery from "./routes/lazy-query";
+import InitiateQueryState from "./routes/initiate-query-state";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+  },
+  {
+    path: "/lazy-query",
+    element: <LazyQuery />,
+  },
+  {
+    path: "/initiate-query-state",
+    element: <InitiateQueryState />,
   },
 ]);
 

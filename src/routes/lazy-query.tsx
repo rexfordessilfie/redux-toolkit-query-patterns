@@ -1,16 +1,16 @@
 import { useDispatch } from "react-redux";
 import { Layout } from "../components/layout";
-import { PokeInfo } from "../components/poke-info";
 import { pokemonApi } from "../api/pokemon";
 import { useState } from "react";
+import { PokeInfoLazy } from "../components/poke-info-lazy";
 
-function Root() {
+function LazyQuery() {
   const dispatch = useDispatch();
   const [hide, setHide] = useState(false);
 
   return (
     <Layout>
-      {hide ? null : <PokeInfo name="bulbasaur" />}
+      {hide ? null : <PokeInfoLazy name="bulbasaur" />}
 
       <div className="flex flex-row gap-2">
         <button onClick={() => dispatch(pokemonApi.util.resetApiState())}>
@@ -29,4 +29,4 @@ function Root() {
   );
 }
 
-export default Root;
+export default LazyQuery;

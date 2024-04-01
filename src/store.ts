@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { pokemonApi } from "./api/pokemon";
+import { useDispatch } from "react-redux";
 
 const rootReducer = combineReducers({
   [pokemonApi.reducerPath]: pokemonApi.reducer,
@@ -17,5 +18,7 @@ export const setupStore = () => {
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;
 export type AppDispatch = AppStore["dispatch"];
+
+export const useAppDispatch = useDispatch<AppDispatch>;
 
 export const store = setupStore();
